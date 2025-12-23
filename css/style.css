@@ -3,63 +3,82 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-}
-
-.page-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #f0f0f0; /* ensures contrast on dark background */
-  text-align: center;
+  font-family: 'Inter', 'Arial', sans-serif;
 }
 
 body {
-  background-color: #2b2b2b; /* charcoal wall */
-  color: #f0f0f0; /* off-white text */
+  background-color: #1e1e1e; /* deep dark background */
+  color: #f5f5f5;
+  line-height: 1.6;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  font-smooth: always;
 }
 
-/* Card container */
+/* Container */
 .card {
-  background-color: #3a3a3a; /* slightly lighter than bg */
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* subtle shadow */
+  background: linear-gradient(145deg, #2a2a2a, #212121);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* Titles */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fefefe;
+  letter-spacing: 0.5px;
+}
+
+/* Paragraphs */
+.note {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #dcdcdc;
+}
+
+/* Images */
 .card img {
   width: 100%;
-  max-height: 200px;
+  border-radius: 15px;
+  margin-bottom: 20px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  transition: transform 0.3s ease;
 }
 
-/* Text */
-.note {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
+.card img:hover {
+  transform: scale(1.03);
 }
 
-/* Voucher */
+/* Voucher box */
 .voucher {
-  font-size: 1.2rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  background-color: #555; /* darker gray */
-  padding: 10px;
-  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
   text-align: center;
-  user-select: none;
-  margin-bottom: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background-color: #444;
   color: #f0f0f0;
+  user-select: none;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .voucher.revealed {
-  background-color: #7aa37a; /* soft green reveal */
+  background-color: #28a745;
   color: #fff;
 }
 
@@ -67,47 +86,52 @@ body {
 button, .btn {
   display: block;
   width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
+  padding: 14px;
+  margin-bottom: 15px;
   font-size: 1rem;
+  font-weight: 600;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .btn-download {
-  background-color: #d4a95d; /* muted mustard */
-  color: #2b2b2b;
+  background: #ffb84d; /* bright mustard */
+  color: #1e1e1e;
 }
 
 .btn-download:hover {
-  background-color: #c79b55;
+  background: #e6a233;
 }
 
 .btn-nav {
-  background-color: #7aa37a; /* soft green */
-  color: #2b2b2b;
+  background: #17a2b8; /* modern cyan */
+  color: #fff;
 }
 
 .btn-nav:hover {
-  background-color: #68966b;
-}
-
-button, .btn, a.btn {
-  text-decoration: none;
+  background: #138496;
 }
 
 /* Responsive */
-@media (min-width: 480px) {
+@media (max-width: 600px) {
   body {
-    padding: 40px;
+    padding: 15px;
   }
+
   .card {
-    max-width: 500px;
-    margin: 20px auto;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .note {
+    font-size: 1rem;
   }
 }
-
-
-
